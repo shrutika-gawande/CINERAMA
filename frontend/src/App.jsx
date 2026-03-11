@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import MovieCard from './components/MovieCard'
+import MovieDetails from './pages/MovieDetails'
 function App() {
 
   return (
     <>
-      <MovieCard />
+      <MovieDetails />
     </>
   )
 }
