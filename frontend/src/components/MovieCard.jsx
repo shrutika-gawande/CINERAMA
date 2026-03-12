@@ -10,14 +10,18 @@ export default function MovieCard({ movie }) {
                     </p>
 
                     <button className="view-btn">
-                        View Details
+                        ▶︎ View Details
                     </button>
                 </div>
             </div>
 
             <div className="card-body">
                 <h5 className="card-title">{movie.title}</h5>
-                <p className="card-text">{movie.year} • {movie.genre[0]}</p>
+                <div className="card-meta">
+                    <p className="card-year">{movie.year}</p>
+                    <p className="card-dot"> • </p>
+                    <p className="card-genre">{movie.genre[0]}</p>
+                </div>
                 <p>Rating</p>
                 {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
             </div>
