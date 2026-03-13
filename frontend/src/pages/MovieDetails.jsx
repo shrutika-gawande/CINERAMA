@@ -1,5 +1,6 @@
 import MovieCard from "../components/MovieCard";
 import movies from "../utils/movieData";
+import "../styles/moviePage.css"
 
 export default function MovieDetails() {
   return (
