@@ -19,7 +19,7 @@ export default function MovieCard({ movie }) {
                 <h5 className="card-title">{movie.title}</h5>
                 <div className="card-meta">
                     <p className="card-year">{movie.year}</p>
-                    <p className="card-dot"> • </p>
+                    <p className="card-dot"></p>
                     <p className="card-genre">{movie.genre[0]}</p>
                 </div>
                 <p>Rating</p>
