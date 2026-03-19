@@ -1,0 +1,188 @@
+.cinerama-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vw;
+  backdrop-filter: blur(8px);
+}
+
+.cinerama-modal {
+  background: var(--deep);
+  border: 1px solid var(--border);
+  max-width: 920px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalSlideIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes modalSlideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cinerama-modal-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+}
+
+.cinerama-modal-poster {
+  position: relative;
+}
+
+.cinerama-modal-poster img {
+  min-height: 480px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cinerama-modal-poster::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 70%, var(--deep));
+}
+
+.cinerama-modal-content {
+  padding: 36px 32px 36px 24px;
+}
+
+.cinerama-modal-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.cinerama-modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.cinerama-modal-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.cinerama-modal-tag {
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+}
+
+.cinerama-modal-desc {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 24px;
+  border-left: 2px solid var(--gold);
+  padding-left: 16px;
+}
+
+.cinerama-modal-cast {
+  margin-bottom: 24px;
+}
+
+.cinerama-cast-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.cinerama-cast-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cinerama-cast-chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.75rem;
+  padding: 5px 12px;
+}
+
+.cinerama-modal-rating-section {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.cinerama-rating-prompt {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+.cinerama-modal-stars {
+  display: flex;
+  gap: 6px;
+}
+
+.cinerama-modal-star {
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--border);
+  transition: color 0.15s, transform 0.15s;
+  user-select: none;
+}
+
+.cinerama-modal-star:hover { transform: scale(1.15); }
+.cinerama-modal-star.filled { color: var(--gold); }
+
+.cinerama-rating-confirmation {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--gold);
+  min-height: 20px;
+  font-style: italic;
+}
+
+.cinerama-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.cinerama-close-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+@media (max-width: 640px) {
+  .cinerama-modal-layout { grid-template-columns: 1fr; }
+  .cinerama-modal-poster { max-height: 220px; }
+}
