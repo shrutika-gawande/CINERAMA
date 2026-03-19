@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 10px;
-  padding: 20px;
+  padding: 0 4vw;
 }
 
 /* Card Styling */
@@ -127,3 +127,40 @@
 .view-btn:hover {
   background: var(--gold-light);
 }
+
+/* ── Card rating row ── */
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+ 
+.card-stars {
+  display: flex;
+  gap: 2px;
+}
+ 
+.card-star {
+  font-size: 0.85rem;
+  color: var(--border);
+  line-height: 1;
+}
+ 
+.card-star.filled {
+  color: var(--gold);
+}
+ 
+.card-avg {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+}
+ 
+.card-avg-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1;
+}
+ 

@@ -9,7 +9,7 @@ export default function Search() {
                 <input className='search-input' type="text" placeholder='🔍︎  Search movies...' />
             
             <div className="filter-group">
-                <button class="filter-btn active" data-genre="all">All</button>
+                <button className="filter-btn active" data-genre="all">All</button>
                 {filters.map((filter) => (
                     <button key={filter} className="filter-btn">
                         {filter}
